@@ -1,0 +1,346 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: #0d6efd; /* Bootstrap primary blue */
+}
+
+a:hover {
+    color: #0a58ca; /* Darker blue on hover */
+}
+
+.section-title {
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title span {
+    position: relative;
+    z-index: 1;
+}
+/* Underline for section titles */
+.title-hr {
+    width: 80px;
+    height: 4px;
+    background-color: #0d6efd; /* Primary color */
+    margin: 10px auto 30px; /* Centered below title */
+    border: none;
+    opacity: 1;
+}
+.navbar-brand{
+    font-family: 'Shojumaru', cursive;
+}
+/* Navbar */
+.navbar {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.bg-dark-transparent {
+       background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/Circuit\ Primary.svg') no-repeat center center/cover;
+
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #0d6efd !important;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/Circuit\ Primary.svg') no-repeat center center/cover;
+    /* Replace with your actual hero image */
+    position: relative;
+}
+
+.hero-section h1 {
+    font-size: 3rem; /* Responsive font size */
+}
+
+@media (min-width: 768px) {
+    .hero-section h1 {
+        font-size: 4.5rem;
+    }
+}
+
+
+/* About Section */
+#about .lead {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+}
+
+#about img {
+    border: 5px solid #fff; /* White border for profile picture */
+}
+
+/* Services Section */
+#services {
+    background-color: #ffffff; /* Cleaner white background for services */
+}
+
+.service-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon-lg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #e9f5ff; /* Light blue background for icon */
+    margin-bottom: 1rem;
+}
+
+.feature-icon-lg i {
+    color: #0d6efd; /* Primary color for icons */
+}
+
+
+/* Portfolio Section */
+#portfolio {
+    background-color: #f8f9fa; /* Light gray background */
+}
+.projects-container {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-y: hidden; /* Hides vertical scrollbar if any */
+    padding-bottom: 20px; /* Space for scrollbar */
+    gap: 20px; /* Space between project cards */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #0d6efd #e9ecef; /* For Firefox */
+}
+
+/* For Webkit browsers (Chrome, Safari, Edge) */
+.projects-container::-webkit-scrollbar {
+    height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.projects-container::-webkit-scrollbar-track {
+    background: #e9ecef; /* Color of the scrollbar track */
+    border-radius: 10px;
+}
+
+.projects-container::-webkit-scrollbar-thumb {
+    background-color: #0d6efd; /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    border: 2px solid #e9ecef; /* Creates padding around thumb */
+}
+
+.project-card {
+    flex: 0 0 auto; /* Prevents cards from shrinking, allows them to take their defined width */
+    width: 350px; /* Fixed width for each card, adjust as needed */
+    max-width: 90vw; /* Max width for smaller screens */
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.03);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card .project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    color: #fff;
+    padding: 20px;
+    opacity: 1; /* Always visible but can be transitioned */
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-info {
+    opacity: 1; /* Ensure it's fully visible on hover if you choose to make it initially less opaque */
+}
+
+.project-card h5 {
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+}
+
+/* Contact Section */
+#contact label {
+    font-weight: 600;
+}
+
+#contact .form-control {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+}
+#contact .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Footer */
+footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Modals */
+.modal-header {
+    background-color: #0d6efd;
+    color: white;
+}
+.modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%); /* Makes close button white */
+}
+.modal-title {
+    font-weight: 600;
+}
+.modal-body h6 {
+    color: #0d6efd;
+    margin-top: 1rem;
+}
+.modal-body hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
+@media (max-width: 991.98px) { 
+    .navbar-collapse {
+        background-color: rgba(33, 37, 41, 0.95);
+        padding: 10px;
+        border-radius: 0 0 5px 5px;
+    }
+}
+
+
+
+
+
+
+
+/* Floating Social Media Icons */
+.floating-socials {
+    position: fixed;
+    top: 61%;
+    right: 2; /* Position on the right side */
+    transform: translateY(-50%); /* Vertically center */
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    gap: 5px; /* Spacing between icons */
+    z-index: 1000; /* Ensure they are above other content */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: light background for the bar */
+    padding: 10px 5px;
+    border-radius: 8px 0 0 8px; /* Rounded corners on the left side */
+    box-shadow: -2px 2px 10px rgba(0,0,0,0.1); /* Optional: subtle shadow */
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Make them circular */
+    background-color: #343a40; /* Dark background for icons */
+    color: #ffffff; /* White icon color */
+    font-size: 1.2rem; /* Icon size */
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    margin: 5px 10px; /* Add some vertical margin */
+}
+
+.social-icon:hover {
+    transform: scale(1.2) translateX(-5px); /* Scale up and slightly move left on hover */
+    background-color: #0d6efd; /* Change background on hover - Bootstrap primary blue */
+}
+
+/* Optional: Specific hover colors for each icon if desired */
+.social-icon.linkedin:hover {
+    background-color: #0A66C2; /* LinkedIn blue */
+}
+
+.social-icon.github:hover {
+    background-color: #181717; /* GitHub black */
+}
+
+.social-icon.twitter:hover {
+    background-color: #000000; /* X/Twitter black */
+    /* For old Twitter blue: background-color: #1DA1F2; */
+}
+
+.social-icon.instagram:hover {
+    background-color: #E4405F; /* Instagram pink */
+}
+
+.social-icon.email:hover {
+    background-color: #c71610; /* Generic red for email, or choose another */
+}
+
+
+@media (max-width: 768px) {
+    .floating-socials {
+        /* Example: move to bottom on small screens, or hide */
+        /* top: auto;
+        bottom: 10px;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+        padding: 5px 10px;
+        border-radius: 8px; */
+
+        /* Or simply hide them if they clutter the view */
+         display: none;
+    }
+}

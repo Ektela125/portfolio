@@ -1,0 +1,63 @@
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(images/back-port-1.png);
+    height: 40vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+body{
+       background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(images/World\ Map.svg);
+       background-repeat: no-repeat;
+       background-position: fixed;
+       background-size: cover;
+
+}
+.card-body{
+    margin-top: 5%;
+}
+
+.card-text {
+  font-family: "Dancing Script", cursive;
+font-size: 20px;  
+}
+.card-title {
+  font-family: "shojumaru", cursive;
+  font-optical-sizing: auto;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff8a;
+    backdrop-filter: blur(10px);
+    height: 5vh;
+    gap: 2em;
+    list-style: none;
+    padding: 10px 0%;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+.modal{
+    background-color: #ffffff64;
+    backdrop-filter: blur(50px);
+}
+.heroSec img{
+    border-radius: 50%;
+}
+.card{
+   background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/World\ Map.svg);
+       background-repeat: no-repeat;
+       background-size: cover; 
+       background-position: center;
+}
+.cardP1{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/World\ Map.svg);
+       background-repeat: no-repeat;
+       background-position: center;
+       background-size: cover; 
+}
+.cardServe{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/polygon-scatter-haikei.svg);
+}
