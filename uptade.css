@@ -47,7 +47,7 @@ a:hover {
 .navbar {
     margin: 0% 2%;
     transition: background-color 0.3s ease-in-out;
-    width: 95%;
+    width: 70%;
 }
 .logo a{
     font-size:30px;
