@@ -93,12 +93,108 @@
         .hero-social-icons a:hover {
             color: #0d6efd; /* Icon hover color - Bootstrap primary */
         }
+#percentage-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #1a1a1a; /* Dark background example */
+  color: #ffffff;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out; /* For fade out */
+}
+
+.preloader-content {
+  /* Styles for the content block within the preloader */
+}
+
+#percentage-display {
+  font-size: 3em; /* Large percentage text */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.progress-bar-container {
+  width: 80%; /* Width of the progress bar */
+  max-width: 400px;
+  height: 20px;
+  background-color: #555; /* Background of the bar container */
+  border-radius: 10px;
+  margin: 0 auto 20px auto;
+  overflow: hidden; /* Important for the inner bar */
+}
+
+#progress-bar {
+  width: 0%; /* Initial width */
+  height: 100%;
+  background-color: #4CAF50; /* Green progress color example */
+  border-radius: 10px;
+  transition: width 0.3s ease-out; /* Smooth width transition */
+}
+
+.loading-text {
+  font-size: 1.2em;
+}
+
+.preloader-logo {
+  width: 80px; /* Adjust as needed */
+  margin-top: 20px;
+}
+
+#main-content {
+  /* Styles for your main content area */
+  transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
+}
+
+#main-content.loaded {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Class to hide the preloader */
+#percentage-preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
     </style>
 </head>
 
 <body>
 
-    <header class="sticky-top">
+  <div id="percentage-preloader" data-aos="zoom-out">
+    <div class="preloader-content">
+        
+      <div id="percentage-display">0%</div>
+      <div class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<br>
+      <div class="progress-bar-container">
+        <div id="progress-bar"></div>
+        
+      </div>
+      
+      <div class="loading-text">Welcome To My Website,<br> please wait for it to load...</div>
+      </div>
+  </div>
+
+  <div id="main-content" style="visibility: hidden; opacity: 0;">
+ 
+    
+
+
+
+    <header class="sticky-top ">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark-transparent position-fixed">
             <div class="container">
                 <div class="logo"><a class="navbar-brand" href="index.html">E.E</a></div>
@@ -356,7 +452,116 @@
     </footer>
 
 
-    
+    <script src="myscript.js"></script>
+    </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const preloader = document.getElementById('percentage-preloader');
+  const percentageDisplay = document.getElementById('percentage-display');
+  const progressBar = document.getElementById('progress-bar');
+  const mainContent = document.getElementById('main-content');
+
+  // --- Asset Tracking ---
+  // Query for all images and scripts you want to track.
+  // You might want to be more specific with selectors if you have many.
+  const images = Array.from(document.querySelectorAll('#main-content img'));
+  const scripts = Array.from(document.querySelectorAll('#main-content script[src]'));
+  // Add other assets like videos, iframes if needed:
+  // const videos = Array.from(document.querySelectorAll('#main-content video'));
+
+  const totalAssets = images.length + scripts.length; // + videos.length etc.
+  let loadedAssets = 0;
+
+  function assetLoaded() {
+    loadedAssets++;
+    let percentage = 0;
+    if (totalAssets > 0) {
+      percentage = Math.round((loadedAssets / totalAssets) * 100);
+    } else {
+      percentage = 100; // If no assets to track, assume 100%
+    }
+
+    percentageDisplay.textContent = percentage + '%';
+    progressBar.style.width = percentage + '%';
+
+    if (loadedAssets === totalAssets) {
+      // All tracked assets are loaded
+      // Add a small delay for smoother transition and to ensure rendering
+      setTimeout(hidePreloader, 3500);
+    }
+  }
+
+  function hidePreloader() {
+    preloader.classList.add('hidden');
+    mainContent.classList.add('loaded');
+    // document.body.style.overflow = 'auto'; // Restore scrollbars if hidden
+  }
+
+  // --- Handle cases where there are no assets to track ---
+  if (totalAssets === 0) {
+    // If there are no specific assets to track,
+    // we can simulate a short load or rely on window.onload.
+    // For this example, we'll just complete it quickly.
+    percentageDisplay.textContent = '10%';
+    progressBar.style.width = '100%';
+    setTimeout(hidePreloader, 500); // Show 100% for a brief moment
+    return; // Exit early
+  }
+
+  // --- Attach load listeners to images ---
+  images.forEach(img => {
+    // Check if image is already cached/completed
+    if (img.complete) {
+      assetLoaded();
+    } else {
+      img.addEventListener('load', assetLoaded);
+      img.addEventListener('error', assetLoaded); // Count errors as "loaded" to not hang the preloader
+    }
+  });
+
+  // --- Attach load listeners to scripts ---
+  scripts.forEach(script => {
+    script.addEventListener('load', assetLoaded);
+    script.addEventListener('error', assetLoaded); // Count errors as "loaded"
+  });
+
+  // --- Fallback: Use window.onload ---
+  // This ensures that even if asset tracking isn't perfect,
+  // the preloader will eventually hide when the entire page is ready.
+  // However, the percentage might jump to 100% at the end if some assets
+  // weren't tracked individually.
+  let windowLoadFired = false;
+  window.addEventListener('load', function() {
+    windowLoadFired = true;
+    // If assetLoaded hasn't reached 100% by window.load, force it.
+    if (loadedAssets < totalAssets) {
+        while(loadedAssets < totalAssets) {
+            assetLoaded(); // Call to update count and UI to 100%
+        }
+    }
+    // Ensure preloader hides if it hasn't already
+    if (!preloader.classList.contains('hidden')) {
+        setTimeout(hidePreloader, 30000); // Give a slight delay for UI to catch up
+    }
+  });
+
+  // --- Timeout Fallback (Safety Net) ---
+  // In case something goes wrong and not all assets fire their load events,
+  // or window.load is somehow delayed indefinitely.
+  setTimeout(function() {
+    if (!windowLoadFired && !preloader.classList.contains('hidden')) {
+      console.warn("Preloader timeout: Forcing preloader to hide.");
+      // Force 100% display
+      percentageDisplay.textContent = '100%';
+      progressBar.style.width = '100%';
+      setTimeout(hidePreloader, 30000);
+    }
+  }, 15000); // 15 seconds timeout (adjust as needed)
+
+});
+  </script>
+
 
 
 
