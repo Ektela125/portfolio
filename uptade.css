@@ -46,7 +46,7 @@ a:hover {
 /* Navbar */
 .navbar {
     transition: background-color 0.3s ease-in-out;
-    width: 85%;
+    width: 95%;
     margin-left: 3%;
 }
 .logo a{
