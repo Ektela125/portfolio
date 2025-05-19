@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PORTFOLIO | EMMANUEL EKITELA - Modern</title>
+    <title>PORTFOLIO | EMMANUEL EKITELA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -13,18 +13,102 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="uptade.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shojumaru&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shojumaru&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for animated hamburger icon */
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+            font-size: 1.5rem; /* Adjust size if needed */
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .hamburger-icon {
+            width: 30px;
+            height: 22px;
+            position: relative;
+            transform: rotate(0deg);
+            transition: .5s ease-in-out;
+            cursor: pointer;
+            display: block; /* Changed from inline-block to block */
+        }
+
+        .hamburger-icon span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: #fff; /* Color of the lines, adjust as needed */
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+
+        .hamburger-icon span:nth-child(1) {
+            top: 0px;
+        }
+
+        .hamburger-icon span:nth-child(2),
+        .hamburger-icon span:nth-child(3) {
+            top: 9px; /* Adjusted for spacing */
+        }
+
+        .hamburger-icon span:nth-child(4) {
+            top: 18px; /* Adjusted for spacing */
+        }
+
+        .navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(1) {
+            top: 9px; /* Adjusted for spacing */
+            width: 0%;
+            left: 50%;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(4) {
+            top: 9px; /* Adjusted for spacing */
+            width: 0%;
+            left: 50%;
+        }
+
+        .hero-social-icons a {
+            color: white; /* Icon color */
+            font-size: 1.5rem; /* Icon size */
+            margin: 0 10px; /* Spacing between icons */
+            transition: color 0.3s ease;
+        }
+
+        .hero-social-icons a:hover {
+            color: #0d6efd; /* Icon hover color - Bootstrap primary */
+        }
+    </style>
 </head>
 
 <body>
 
     <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark-transparent">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark-transparent position-fixed">
             <div class="container">
-                <a class="navbar-brand" href="#">E.E</a>
+                <div class="logo"><a class="navbar-brand" href="index.html">E.E</a></div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <div class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -54,10 +138,20 @@
             <div class="container" data-aos="fade-up">
                 <h1 class="display-3 fw-bold">I'm Emmanuel Ekitela</h1>
                 <p class="lead fs-4 mb-4">Aspiring Full Stack Software Engineer</p>
-                <a href="#about" class="btn btn-primary btn-lg">Discover More</a>
+                <a href="#about" class="btn btn-primary btn-lg mb-4">Discover More</a>
+                <div class="hero-social-icons mt-3">
+                    <a href="https://github.com/Ektela125" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100087310441460" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://x.com/ekitela_e" target="_blank" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@eki.tech?_t=ZM-8wU1MPyLjgk&_r=1" target="_blank" title="Tiktok"><i class="bi bi-tiktok"></i></a>
+                    <a href="https://www.instagram.com/ekitela_em?igsh=ZjcyM2FxanI5c3R2" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/emmanuel-ekitela-418263346/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://wa.me/+254792264992" target="_blank" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    <a href="mailto:ekitela.tech@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
+                </div>
             </div>
         </section>
-                <a href="success.html" class="btn btn-primary btn-lg">success</a>
+        <a href="success.html" class="btn btn-primary btn-lg">success</a>
 
         <section id="about" class="py-5">
             <div class="container">
@@ -69,6 +163,7 @@
                     <div class="col-lg-4 text-center" data-aos="fade-right" data-aos-delay="100">
                         <img src="images/port-pic.png" class="img-fluid rounded-circle shadow-lg" alt="Emmanuel Ekitela" style="width: 250px; height: 250px; object-fit: cover;">
                     </div>
+                    <br>
                     <div class="col-lg-8" data-aos="fade-left" data-aos-delay="200">
                         <p class="lead">
                             I'm a frontend developer from Lodwar, Turkana, passionate about web development and UI/UX design. I thrive on transforming complex challenges into simple, beautiful, and intuitive digital experiences.
@@ -147,132 +242,109 @@
             </div>
         </section>
 
-<section id="portfolio" class="py-5">
-<div class="container-fluid">
-<div class="text-center mb-5" data-aos="fade-up">
-    <h2 class="fw-bold section-title"><span>My Projects</span></h2>
-        <hr class="title-hr">
-</div>
-<div class="projects-container" data-aos="fade-up">
-    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-        <img src="images/Turkana Youths Tech Hub.png" alt="Turkana Youths Tech Hub">
-        <div class="project-info">
-            <h5 class="fw-bold">Turkana Youths Tech Hub</h5>
-            <p>A platform for empowering youth in Turkana with tech skills.</p>
-            <a href="http://turkanatechyouthshub.com" target="_blank" class="btn btn-outline-light btn-sm">View Live Project</a>
-        </div>
-    </div>
-    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-        <img src="images/therapySite.png" alt="Virtual Reality Therapy">
-        <div class="project-info">
-            <h5 class="fw-bold">Virtual Reality Therapy</h5>
-            <p>An innovative approach to therapy using VR. (Under Development)</p>
-            <a href="#" class="btn btn-outline-light btn-sm disabled">View Live Project</a>
-        </div>
-    </div>
-    <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-        <img src="images/eecommerce.png" alt="Ecommerce Platform">
-        <div class="project-info">
-            <h5 class="fw-bold">E-commerce Platform</h5>
-            <p>A feature-rich online shopping solution. (Under Development)</p>
-            <a href="#" class="btn btn-outline-light btn-sm disabled">View Live Project</a>
-        </div>
-    </div>
-</div>
-</div>
-</section>
-
-
-<section id="contact" class="py-5 bg-light">
-<div class="container">
-<div class="text-center mb-5" data-aos="fade-up">
-    <h2 class="fw-bold section-title"><span>Get In Touch</span></h2>
-    <hr class="title-hr">
-</div>
-<div class="row align-items-center">
-    <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="100">
-        <h3 class="fw-bold mb-3">Let's Create Something <span class="text-primary">Extraordinary</span>.</h3>
-        <p class="lead">
-            Have a project in mind? Looking for a dedicated software engineer to bring your vision to life? Or perhaps you just want to connect?
-        </p>
-        
-        <div class="mt-4">
-            <h5 class="fw-semibold mb-3">Reach out if you're interested in:</h5>
-            <ul class="list-unstyled">
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Discussing a new project or idea.</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Exploring collaboration opportunities.</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Learning more about my work and skills.</li>
-            </ul>
-        </div>
-        <p class="mt-4">
-            Fill out the form, and let's start a conversation. I typically respond within 24hours.
-        </p>
-        <div class="mt-4 contact-info-alt">
-            <p class="mb-1"><i class="bi bi-envelope-fill me-2 text-primary"></i> <a href="mailto:ekitela.tech@gmail.com" class="text-decoration-none text-dark">ekitela.tech@gmail.com</a></p>
+        <section id="portfolio" class="py-5">
+            <div class="container-fluid">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="fw-bold section-title"><span>My Projects</span></h2>
+                    <hr class="title-hr">
+                </div>
+                <div class="projects-container" data-aos="fade-up">
+                    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="images/Turkana Youths Tech Hub.png" alt="Turkana Youths Tech Hub">
+                        <div class="project-info">
+                            <h5 class="fw-bold">Turkana Youths Tech Hub</h5>
+                            <p>A platform for empowering youth in Turkana with tech skills.</p>
+                            <a href="http://turkanatechyouthshub.com" target="_blank" class="btn btn-outline-light btn-sm">View Live Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="images/therapySite.png" alt="Virtual Reality Therapy">
+                        <div class="project-info">
+                            <h5 class="fw-bold">Virtual Reality Therapy</h5>
+                            <p>An innovative approach to therapy using VR. (Under Development)</p>
+                            <a href="#" class="btn btn-outline-light btn-sm disabled">View Live Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="images/eecommerce.png" alt="Ecommerce Platform">
+                        <div class="project-info">
+                            <h5 class="fw-bold">E-commerce Platform</h5>
+                            <p>A feature-rich online shopping solution. (Under Development)</p>
+                            <a href="#" class="btn btn-outline-light btn-sm disabled">View Live Project</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-    </div>
-
-    <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-        <div class="card shadow-lg border-0 p-4 p-md-5 contact-form-card">
-            <h4 class="text-center mb-4 fw-semibold">Send Me a Message</h4>
-<form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="b303188f-86db-41d9-9771-c40dc1316bff">
-    <div class="row">
-        <div class="col-md-6 mb-3">
-
-            <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="Name" id="fullName" placeholder="e.g., Emmanuel Ekitela" required>
-        </div>
-        <div class="col-md-6 mb-3">
-            <label for="emailAddress" class="form-label">Email Address <span class="text-danger">*</span></label>
-            <input type="email" name="Email" class="form-control" id="emailAddress" placeholder="e.g., example@gmail.com" required>
-        </div>
-    </div>
-    <div class="mb-3">
-        <label for="subject" class="form-label">Subject</label>
-        <input type="text" name="Subject" class="form-control" id="subject" placeholder="Subject of your message">
-    </div>
-    <div class="mb-3">
-        <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
-        <textarea class="form-control" name="Message" id="message" rows="5" placeholder="Your message..." required></textarea>
-    </div>
-    <div class="text-center">
-        <input type="hidden" name="redirect" value="a href='success.html'">
-        <button type="submit" class="btn btn-primary btn-lg px-5">
-            <i class="bi bi-send-fill me-2"></i>Send Message
-        </button>
-    </div>
-</form>
-        </div>
-    </div>
-</div>
-</div>
-</section>
+        </section>
 
 
+        <section id="contact" class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="fw-bold section-title"><span>Get In Touch</span></h2>
+                    <hr class="title-hr">
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="100">
+                        <h3 class="fw-bold mb-3">Let's Create Something <span class="text-primary">Extraordinary</span>.</h3>
+                        <p class="lead">
+                            Have a project in mind? Looking for a dedicated software engineer to bring your vision to life? Or perhaps you just want to connect?
+                        </p>
+                        
+                        <div class="mt-4">
+                            <h5 class="fw-semibold mb-3">Reach out if you're interested in:</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Discussing a new project or idea.</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Exploring collaboration opportunities.</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Learning more about my work and skills.</li>
+                            </ul>
+                        </div>
+                        <p class="mt-4">
+                            Fill out the form, and let's start a conversation. I typically respond within 24hours.
+                        </p>
+                        <div class="mt-4 contact-info-alt">
+                            <p class="mb-1"><i class="bi bi-envelope-fill me-2 text-primary"></i> <a href="mailto:ekitela.tech@gmail.com" class="text-decoration-none text-dark">ekitela.tech@gmail.com</a></p>
+                            </div>
+                    </div>
 
+                    <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+                        <div class="card shadow-lg border-0 p-4 p-md-5 contact-form-card">
+                            <h4 class="text-center mb-4 fw-semibold">Send Me a Message</h4>
+                            <form action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="b303188f-86db-41d9-9771-c40dc1316bff">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
 
+                                        <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="Name" id="fullName" placeholder="e.g., Emmanuel Ekitela" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="emailAddress" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                        <input type="email" name="Email" class="form-control" id="emailAddress" placeholder="e.g., example@gmail.com" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" name="Subject" class="form-control" id="subject" placeholder="Subject of your message">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" name="Message" id="message" rows="5" placeholder="Your message..." required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <input type="hidden" name="redirect" value="a href='success.html'">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                        <i class="bi bi-send-fill me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-
-
-        <div class="floating-socials">
-        <a href="www.linkedin.com/in/emmanuel-ekitela-418263346" target="_blank" class="social-icon linkedin" aria-label="LinkedIn" data-aos="fade-left" data-aos-delay="500" data-aos-offset="0">
-            <i class="bi bi-linkedin"></i>
-        </a>
-        <a href="https://github.com/Ektela125" target="_blank" class="social-icon github" aria-label="GitHub" data-aos="fade-left" data-aos-delay="600" data-aos-offset="0">
-            <i class="bi bi-github"></i>
-        </a>
-        <a href="https://x.com/ekitela_e" target="_blank" class="social-icon twitter" aria-label="Twitter" data-aos="fade-left" data-aos-delay="700" data-aos-offset="0">
-            <i class="bi bi-twitter-x"></i> </a>
-        <a href="https://www.instagram.com/ekitela_em?igsh=ZjcyM2FxanI5c3R2" target="_blank" class="social-icon instagram" aria-label="Instagram" data-aos="fade-left" data-aos-delay="800" data-aos-offset="0">
-            <i class="bi bi-instagram"></i>
-        </a>
-        <a href="mailto:ekitela.tech@gmail.com" class="social-icon email" aria-label="Email" data-aos="fade-left" data-aos-delay="900" data-aos-offset="0">
-            <i class="bi bi-envelope-fill"></i>
-        </a>
-    </div>
-
-    
+        
     </main>
 
     <footer class="bg-dark text-white text-center py-4">
@@ -298,16 +370,16 @@
                     <div class="mb-3">
                         <h6><strong>Primary School Certificate</strong> - Laikipia County(2008-2015)</h6>
                         <p>
-          
+                
                     </div>
 
-<hr>
-                      <div class="mb-3">
+                    <hr>
+                    <div class="mb-3">
                         <h6><strong>High School Certificate</strong> - Kajiado County(2016-2020)</h6>
                         <p>
-                          Graduated with an aggregate of 3.2 out of 5.0 in the 2020 academic year. 
+                            Graduated with an aggregate of 3.2 out of 5.0 in the 2020 academic year. 
                         </p>
-          
+                
                     </div>
                     <hr>
                     <div class="mb-3">
@@ -340,7 +412,7 @@
                     <p>MongoDB</p>
                     <h6>Other Skills:</h6>
                     <p>UI/UX Design, Responsive Web Design, Agile Methodologies, RESTful APIs, Problem Solving</p>
-                </div>
+                    </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
@@ -369,7 +441,7 @@
                     <hr>
                     <div class="mb-3">
                         <h6><strong>frontend Developer (Freelance)</strong> - </h6>
-                         <ul>
+                        <ul>
                             <li>Developed more than 10 websites for clients Hence other websites having a NDA</li>
                             <li>Managed project Turkana Youth Tech Hub from conception to deployment.</li>
                         </ul>
@@ -392,17 +464,46 @@
 
         // Update footer year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000, // values from 0 to 3000, with step 50ms
-            once: true, // whether animation should happen only once - while scrolling down
-        });
 
-        // Update footer year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        
+
+
+
+
+
+        // Close navbar when a nav-link is clicked
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all the navigation links
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            // Get the collapsible navbar element
+            const navbarCollapse = document.getElementById('navbarNav');
+            // Create a Bootstrap Collapse instance for manual control
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                toggle: false // Initialize it but don't toggle it immediately
+            });
+            const navbarToggler = document.querySelector('.navbar-toggler'); // Get the toggler button
+
+            // Add a click event listener to each navigation link
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    // Check if the navbar collapse element is currently shown
+                    if (navbarCollapse.classList.contains('show')) {
+                        // If it's shown, hide it
+                        bsCollapse.hide();
+                        // Manually update the aria-expanded attribute of the toggler
+                        // This ensures the hamburger icon animates back to its original state
+                        if (navbarToggler.getAttribute('aria-expanded') === 'true') {
+                           navbarToggler.setAttribute('aria-expanded', 'false');
+                           // The CSS for the hamburger icon relies on aria-expanded="true"
+                           // so we ensure it's set to false when the menu closes.
+                        }
+                    }
+                });
+            });
+        });
     </script>
-</body>
+
+    
+    </body>
 </html>

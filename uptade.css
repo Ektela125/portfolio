@@ -46,7 +46,17 @@ a:hover {
 /* Navbar */
 .navbar {
     transition: background-color 0.3s ease-in-out;
+    width: 100%;
 }
+.logo a{
+    font-size:30px;
+}
+
+.successCard{
+    padding-top: 10%;
+}
+
+
 
 .bg-dark-transparent {
        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/Circuit\ Primary.svg') no-repeat center center/cover;
