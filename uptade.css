@@ -1,5 +1,6 @@
 /* General Styles */
 body {
+    overflow-y: hidden;
     font-family: 'Poppins', sans-serif;
     color: #333;
     line-height: 1.6;
@@ -137,6 +138,7 @@ a:hover {
     background-color: #f8f9fa; /* Light gray background */
 }
 .projects-container {
+    /* width: 400px; */
     display: flex;
     overflow-x: auto; /* Enables horizontal scrolling */
     overflow-y: hidden; /* Hides vertical scrollbar if any */
