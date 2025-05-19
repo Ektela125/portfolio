@@ -47,7 +47,7 @@ a:hover {
 .navbar {
     margin: 0% 10%;
     transition: background-color 0.3s ease-in-out;
-    width: 70%;
+    width: 80%;
 }
 .logo a{
     font-size:30px;
@@ -84,7 +84,7 @@ a:hover {
 /* Hero Section */
 .hero-section {
     height: 100vh; /* Full viewport height */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/Circuit\ Primary.svg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/World\ Map.svg') no-repeat center center/cover;
     /* Replace with your actual hero image */
     position: relative;
 }
