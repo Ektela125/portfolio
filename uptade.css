@@ -46,10 +46,14 @@ a:hover {
 /* Navbar */
 .navbar {
     transition: background-color 0.3s ease-in-out;
-    width: 80%;
+    width: 85%;
+    margin-left: 3%;
 }
 .logo a{
     font-size:30px;
+}
+.getInTouch{
+    overflow-x: hidden;
 }
 
 .successCard{
